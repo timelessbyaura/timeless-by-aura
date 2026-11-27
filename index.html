@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+
+    <div class="logo">TIMELESS BY AURA</div>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+        ☰
+    </label>
+
+    <nav>
+        <a href="#">HOME</a>
+        <a href="#collection">COLLECTION</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+
+        <a href="#wishlist">
+            WISHLIST ❤️ (<span id="wishlist-count">0</span>)
+        </a>
+
+        <a href="#cart">
+            CART 🛍️ (<span id="cart-count">0</span>)
+        </a>
+    </nav>
+
+</header>
+
+<section class="hero" style="position:relative; height:90vh; overflow:hidden;">
+  <div class="slides">
+    <img src="images/new-hero.png" class="slide active">
+    <img src="images/slide1.png" class="slide">
+    <img src="images/slid2.png" class="slide">
+    <img src="images/slide3.png" class="slide">
+    <img src="images/slide4.png" class="slide">
+
+  </div>
+  <div class="hero-content" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; color:#49311f; background:transparent; padding:30px; border-radius:12px; z-index:2;">
+    <h1>TIMELESS BEAUTY</h1>
+    <p>Handcrafted Jhumkas for Every Celebration</p>
+<a href="#collection" target="_self" class="btn" style="background:#c9a86a; color:white; padding:12px 28px; text-decoration:none; border-radius:6px;">SHOP NOW</a>
+  </div>
+</section>
+
+<section id="collection" class="collection">
+<h2>OUR COLLECTION - 12 EXCLUSIVE DESIGNS</h2>
+
+<div class="product-search">
+    <input
+        type="text"
+        id="productSearch"
+        placeholder="Search jewellery..."
+    >
+</div>
+
+<div class="category-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="bridal">Bridal</button>
+    <button class="filter-btn" data-filter="jhumkas">Jhumkas</button>
+    <button class="filter-btn" data-filter="daily">Daily Wear</button>
+    <button class="filter-btn" data-filter="kundan">Kundan</button>
+</div>
+<div class="grid">
+    <div class="card" data-category="Daily Wear">
+    <a href="product1.html">
+        <img src="images/img1.jpg" alt="">
+    </a>
+
+    <h3>Floral Gold Pendant Set</h3>
+    <p>Rs. 1850</p>
+
+    <button class="wishlist-btn" onclick="addToWishlist(this)">
+        ♡
+    </button>
+
+    <button class="add-to-cart"
+        data-name="Floral Gold Pendant Set"
+        data-price="1850">
+        Add to Cart
+    </button>
+</div>
+
+<div class="card" data-category="daily"><a href="product2.html"><img src="images/img2.jpg" alt="Black Stone Pendant Set"></a><h3>black stone pendant set</h3><p>Rs. 1950</p><button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button><button class="add-to-cart"
+            data-name="black stone pendant set"
+            data-price="1950">
+            Add to Cart
+        </button>
+</div>
+<div class="card" data-category="Jhumkas"><a href="product3.html"><img src="images/img3.jpg" alt=""></a><h3>Royal Golden jhumka set</h3><p>Rs. 2000</p> <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button><button class="add-to-cart"
+            data-name="Royal Golden jhumka set"
+            data-price="2000">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="Kundan"><a href="product4.html"><img src="images/img4.jpg" alt=""></a><h3>Noor Kundan Bridal Set</h3><p>Rs. 5000</p> <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button> <button class="add-to-cart"
+            data-name="Noor Kundan Bridal Set"
+            data-price="5000">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="daily"><a href="product5.html"><img src="images/img5.jpg" alt=""></a><h3>Elegant Pearl Necklace Set</h3><p>Rs. 1850</p> <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button><button class="add-to-cart"
+            data-name="Elegant Pearl Necklace Set"
+            data-price="1850">
+    
+            Add to Cart
+        </button></div>
+<div class="card"data-category="daily"><a href="product6.html"><img src="images/img6.jpg" alt=""></a><h3>Rose Gold Crystal Bracelet</h3><p>Rs. 2850</p><button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button> <button class="add-to-cart"
+            data-name="Rose Gold Crystal Set"
+            data-price="2850">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="Kundan"><a href="product7.html"><img src="images/img7.jpg" alt=""></a><h3>Rang Mehal - Oxidized Silver Meena Kari Set</h3><p>Rs.4000</p> <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button><button class="add-to-cart"
+            data-name="Rang Mehal - Oxidized Silver Meena Kari Set"
+            data-price="4000">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="Jhumkas"><a href="product8.html"><img src="images/img8.jpg" alt=""></a><h3>Antique Gold Chandbali Earrings</h3><p>Rs. 1750</p> 
+    <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button>
+ <button class="add-to-cart"
+            data-name="Antique Gold Chandbali Earrings"
+            data-price="1750">
+            Add to Cart
+        </button></div>
+<div class="card" data-category="bridal"><a href="product9.html"><img src="images/img9.jpg" alt=""></a><h3>Royal Maroon & Gold Bridal Set</h3><p>Rs. 2500</p> <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button> <button class="add-to-cart"
+            data-name="Royal Maroon & Gold Bridal Set"
+            data-price="2500">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="daily"><a href="product10.html"><img src="images/img10.jpg" alt=""></a><h3>Elegant Diamond Ring 💍</h3><p>Rs.40000</p><button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button> <button class="add-to-cart"
+            data-name="Elegant Diamond Ring"
+            data-price="40000">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="Bridal"><a href="product11.html"><img src="images/img11.jpg" alt=""></a><h3>Sparkling American Diamond Set</a></h3><p>Rs. 2350</p><button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button> <button class="add-to-cart"
+            data-name="Sparkling American Diamond Set"
+            data-price="2350">
+            Add to Cart
+        </button></div>
+<div class="card"data-category="Bridal"><a href="product12.html"><img src="images/img12.jpg" alt=""></a><h3>Royal Bridal Nath</h3><p>Rs. 1600 - BESTSELLER</p> <button class="wishlist-btn" onclick="addToWishlist(this)">
+    ♡
+</button><button class="add-to-cart"
+            data-name="Royal Bridal Nath"
+            data-price="1600">
+            Add to Cart
+        </button></div>
+</div>
+</section>
+
+<section id="about" class="about">
+
+    <img src="images/img4.jpg" alt="Timeless by Aura Jewellery">
+
+    <div class="about-text">
+
+        <h2>ABOUT TIMELESS BY AURA</h2>
+
+        <p>
+            Karachi based luxury artificial jewelry brand.
+            We design premium quality jhumkas that look like real gold.
+            Our mission is to make every girl feel royal without spending lacs.
+            <br><br>
+            Project by: Khizra - For Display Purpose.
+            12 exclusive designs curated for modern Pakistani women.
+        </p>
+
+        <a href="#contact" class="btn">CONTACT US</a>
+
+    </div>
+
+</section>
+
+
+    
+<section id="contact" class="contact">
+
+    <div class="contact-card">
+
+        <span class="contact-subtitle">WE WOULD LOVE TO HEAR FROM YOU</span>
+
+        <h2>GET IN TOUCH</h2>
+
+        <p class="contact-description">
+            Have a question or want to order your favourite jewellery?
+            We are always here to help you shine.
+        </p>
+
+        <a href="https://wa.me/92XXXXXXXXXX?text=Salam%20Timeless%20By%20Aura"
+           target="_blank" class="whatsapp-btn">
+            💬 Chat on WhatsApp
+        </a>
+
+        <div class="contact-details">
+
+            <div class="contact-item">
+                <h3>EMAIL</h3>
+                <p>timelessbyaura@gmail.com</p>
+            </div>
+
+            <div class="contact-item">
+                <h3>LOCATION</h3>
+                <p>Karachi, Pakistan</p>
+            </div>
+
+            <div class="contact-item">
+                <h3>PAYMENT</h3>
+                <p>Cash on Delivery Available</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="wishlist" class="wishlist-section">
+
+    <h2>MY WISHLIST ❤️</h2>
+
+    <div id="wishlist-items">
+        <p>Your favourite jewellery will appear here.</p>
+    </div>
+
+</section>
+
+<section id="cart" class="cart-section">
+    <h2>MY SHOPPING CART 🛍️</h2>
+
+    <div id="cart-items">
+        <p>Your cart is empty.</p>
+    </div>
+
+    <h3>Total: Rs. <span id="cart-total">0</span></h3>
+
+    <button class="continue-shopping-btn" onclick="window.location.href='#collection'">
+    ← CONTINUE SHOPPING
+</button>
+
+    <button class="checkout-btn" onclick="goToCheckout()">
+    PROCEED TO CHECKOUT →
+</button>
+</section>
+
+<footer style="background:#111; color:#ccc; padding:50px 20px 20px 20px; margin-top:0;">
+
+<div class="footer-grid" style="max-width:1100px; margin:auto; display:grid; grid-template-columns: repeat(4, 1fr); gap:30px;">
+
+    <div>
+      <h3 style="color:#c9a86a; letter-spacing:2px; margin:0;">TIMELESS BY AURA</h3>
+      <p style="font-size:14px; line-height:1.6; margin-top:12px;">Handcrafted Jhumkas for Every Celebration. Traditional elegance with modern grace.</p>
+    </div>
+    <div>
+      <h4 style="color:#fff; margin:0;">Quick Links</h4>
+      <p style="line-height:2; margin-top:10px;"><a href="#collection" style="color:#ccc; text-decoration:none;">Collection</a><br><a href="#about" style="color:#ccc; text-decoration:none;">About</a><br><a href="#contact" style="color:#ccc; text-decoration:none;">Contact</a></p>
+    </div>
+    <div>
+      <h4 style="color:#fff; margin:0;">Customer Care</h4>
+      <p style="font-size:14px; line-height:2; margin-top:10px;">Shipping All Over Pakistan<br>Cash on Delivery<br>Exchange Policy</p>
+    </div>
+    
+<div>
+    <h4 style="color:#d6b477; margin:0;">Follow Us</h4>
+
+    <p style="font-size:14px; margin-top:15px; line-height:2.5;">
+
+        <a href="https://www.instagram.com/timeless_by_aura/"
+           target="_blank"
+           style="color:#e8d5b8; text-decoration:none;">
+           📸 Instagram
+        </a>
+
+        <br>
+
+        <a href="https://wa.me/9231123412242"
+           target="_blank"
+           style="color:#e8d5b8; text-decoration:none;">
+           💬 WhatsApp
+        </a>
+
+    </p>
+</div>
+
+</div>
+  <div style="border-top:1px solid #333; margin-top:40px; padding-top:15px; text-align:center; font-size:13px; color:#888;">
+    © 2026 Timeless by Aura. All Rights Reserved. | Designed with Love in Karachi
+  </div>
+</footer>
+<script>
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 3000);
+</script>
+
+<script>
+const searchInput = document.getElementById("productSearch");
+const searchProductCards = document.querySelectorAll(".collection .card");
+
+if (searchInput) {
+    searchInput.addEventListener("input", function () {
+        const searchText = this.value.toLowerCase().trim();
+
+        searchProductCards.forEach(function (card) {
+            const productName = card.textContent.toLowerCase();
+
+            card.style.display = productName.includes(searchText)
+                ? ""
+                : "none";
+        });
+    });
+}
+</script>
+<div id="cart-overlay" class="cart-overlay" onclick="closeCartPopup()">
+    <div id="cart-popup" class="cart-popup" onclick="event.stopPropagation()">
+        <div class="popup-icon">✓</div>
+        <h3>Added Successfully!</h3>
+        <p>Your jewellery has been added to your shopping bag.</p>
+        <button onclick="closeCartPopup()">CONTINUE SHOPPING</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Timeless by Aura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">TIMELESS BY AURA</div>
+</header>
+
+<section class="checkout-section">
+
+    <h1>COMPLETE YOUR ORDER</h1>
+    <p class="checkout-subtitle">Your beautiful jewellery is just one step away!</p>
+
+    <div class="checkout-container">
+
+        <div class="checkout-form">
+            <h2>Delivery Information</h2>
+
+            <form id="checkoutForm">
+
+                <label>Full Name</label>
+                <input type="text" id="customerName"
+                    placeholder="Enter your full name" required>
+
+                <input type="tel" id="customerPhone"
+    placeholder="03XXXXXXXXX"
+    pattern="03[0-9]{9}"
+    maxlength="11"
+    title="Please enter a valid 11-digit Pakistani mobile number"
+    required>
+
+                <label>Delivery Address</label>
+                <textarea id="customerAddress"
+                    placeholder="Enter your complete address"
+                    rows="4" required></textarea>
+
+                <label>Payment Method</label>
+                <select id="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="Cash on Delivery">Cash on Delivery</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+
+                <button type="submit" class="place-order-btn">
+                    PLACE ORDER
+                </button>
+
+            </form>
+        </div>
+
+            <div id="checkout-items">
+    Your products will appear here.
+</div>
+
+            <h3>Total: Rs. <span id="checkout-total">0</span></h3>
+            <a href="index.html#collection" class="continue-shopping">
+    ← CONTINUE SHOPPING
+</a>
+        </div>
+
+    </div>
+
+</section>
+<script>
+let cart = JSON.parse(localStorage.getItem("timelessCart")) || [];
+
+let checkoutItems = document.getElementById("checkout-items");
+let checkoutTotal = document.getElementById("checkout-total");
+
+let total = 0;
+
+checkoutItems.innerHTML = "";
+
+if (cart.length === 0) {
+    checkoutItems.innerHTML = "<p>Your cart is empty.</p>";
+} else {
+    cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        checkoutItems.innerHTML += `
+            <div class="checkout-item">
+                <h3>${item.name}</h3>
+                <p>Price: Rs. ${item.price.toLocaleString("en-PK")}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Subtotal: Rs. ${itemTotal.toLocaleString("en-PK")}</p>
+            </div>
+        `;
+    });
+}
+
+checkoutTotal.innerText = total.toLocaleString("en-PK");
+document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("customerName").value;
+    let phone = document.getElementById("customerPhone").value;
+    let address = document.getElementById("customerAddress").value;
+    let payment = document.getElementById("paymentMethod").value;
+
+
+    
+
+    let message = "Hello! I want to place an order from Timeless by Aura.%0A%0A";
+    message += "Customer Name: " + name + "%0A";
+    message += "Phone: " + phone + "%0A";
+    message += "Address: " + address + "%0A";
+    message += "Payment: " + payment + "%0A%0A";
+
+    message += "Order Details:%0A";
+
+    cart.forEach(item => {
+        message += item.name + " - Rs. " + item.price + " x " + item.quantity + "%0A";
+    });
+
+    message += "%0ATotal: Rs. " + total;
+
+    let whatsappNumber = "9231123412242";
+    if (cart.length === 0) {
+    alert("Your cart is empty! Please add products first.");
+    window.location.href = "index.html";
+    return;
+}
+
+    window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank");
+    window.location.href = "order-confirmation.html";
+});
+</script>
+</body>
+</html>
