@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/algerian');
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#0a0a0a;color:#fff}
 header {
@@ -1633,19 +1633,4 @@ nav, .navbar, .menu, .nav-links {
 
 * {
   font-family: 'Algerian', sans-serif !important;
-}
-/* HEADER LOGO KO ALGERIAN KARNE KE LIYE */
-header, .logo, .site-title, .brand, header h1, nav h1 {
-  font-family: 'Algerian', sans-serif !important;
-  letter-spacing: 2px !important;
-}
-/* PEHLE JESA CENTER */
-.hero, .hero-section, .banner {
-  text-align: center !important;
-}
-
-.hero-content, .hero-box, .banner-content {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
 }
